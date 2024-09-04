@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mfyo40may-java-springboot-gitops
+  description: This is GitOps manifest for mfyo40may-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mfyo40may-java-springboot
+    janus-idp.io/tekton: mfyo40may-java-springboot
+    backstage.io/kubernetes-id: mfyo40may-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mfyo40may-java-springboot
